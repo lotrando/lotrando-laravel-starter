@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Basic WebViewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+  <div id='viewer' style='width: 1024px; height: 800px; margin: 0 auto;'></div>
+  <script src='/lib/webviewer.min.js'></script>
+  <script>
+  WebViewer({
+      path: './lib',
+      licenseKey: 'YOUR_LICENSE_KEY',
+      initialDoc: '/soubory/test.xlsx',
+    }, document.getElementById('viewer'))
+    .then(instance => {
+      instance.UI.setLanguage('cs');
+      const { documentViewer, annotationManager } = instance.Core;
+      documentViewer.addEventListener('documentLoaded', () => {});
+      documentViewer.zoomTo(1.87);
+    });
+  </script>
+</body>
+
+</html>
