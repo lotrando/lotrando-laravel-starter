@@ -1,18 +1,16 @@
-      <!-- Navbar -->
       <header class="navbar navbar-expand-md navbar-light d-print-none">
-        <div class="container-xl">
+        <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <h1 class="navbar-brand d-none-navbar-horizontal pe-md-3 pe-0">
-            <a href="/">
+            <a href="{{ route('home') }}">
               <img src="{{ asset('static/logo.svg') }}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
           </h1>
           <div class="navbar-nav order-md-last flex-row">
-
-            <div class="d-none d-md-flex">
+            <div class="d-none d-md-flex me-2">
               <a href="?theme=dark" class="nav-link hide-theme-dark px-0" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
                 <!-- Download SVG icon from http://tabler-icons.io/i/moon -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -30,7 +28,7 @@
                   <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
                 </svg>
               </a>
-              <div class="nav-item dropdown d-none d-md-flex me-3">
+              {{-- <div class="nav-item dropdown d-none d-md-flex me-3">
                 <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
                   <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -134,7 +132,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             </div>
             @guest
               <div class="nav-item d-none d-md-flex">
@@ -165,23 +163,56 @@
               </div>
             @endguest
             @auth
-              <div class="nav-item dropdown">
-                <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                  <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
-                  <div class="d-none d-xl-block ps-2">
-                    <div>{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</div>
-                    <div class="small text-muted mt-1">{{ Auth::user()->personal_number }}</div>
+              {{-- User Dropdown --}}
+              <div class="nav-item dropdown m-1">
+                <a class="nav-link d-flex text-reset p-0" data-bs-toggle="dropdown" href="#" aria-label="Open user menu">
+                  <span class="avatar avatar-sm ms-1" style="background-image: url(../../foto/{{ Auth::user()->personal_number . '.jpg' ?? 'no_image.png' }})">
+                  </span>
+                  <div class="d-none d-xl-block ps-1">
+                    <div>{{ Auth::user()->last_name ?? '' }} {{ Auth::user()->first_name ?? '' }}</div>
+                    <div class="small text-muted">{{ Auth::user()->email ?? '' }}</div>
                   </div>
                 </a>
+                {{-- User Dropdown Menu --}}
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <a href="#" class="dropdown-item">Status</a>
-                  <a href="./profile.html" class="dropdown-item">Profile</a>
-                  <a href="#" class="dropdown-item">Feedback</a>
+                  <a class="dropdown-item" href="#">
+                    <svg class="icon dropdown-item-icon text-azure" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                      <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                      <path d="M16 5l3 3"></path>
+                    </svg>
+                    {{ __('Profil') }}
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <svg class="icon dropdown-item-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z">
+                      </path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    {{ __('Nastavení') }}
+                  </a>
                   <div class="dropdown-divider"></div>
-                  <a href="./settings.html" class="dropdown-item">Settings</a>
-                  <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                  <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logout-modal" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon dropdown-item-icon text-red" width="24" height="24" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12.5 21h-5.5a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2h10a2 2 0 0 1 1.74 1.015"></path>
+                      <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                      <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                      <path d="M19 16v6"></path>
+                      <path d="M22 19l-3 3l-3 -3"></path>
+                    </svg>
+                    {{ __('Logout') }}
+                  </a>
                 </div>
+                {{-- User Dropdown Menu End --}}
               </div>
+              {{-- User Dropdown End --}}
             @endauth
           </div>
         </div>

@@ -29,6 +29,7 @@
     @include('layouts.partials.navbar')
     @yield('app')
     @yield('modals')
+    @include('layouts.partials.logout')
   </div>
 
   <script src="{{ asset('js/jquery.min.js') }}"></script>

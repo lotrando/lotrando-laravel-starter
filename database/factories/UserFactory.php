@@ -14,12 +14,10 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $personalNumber = $this->faker->numberBetween('60000', '65000');
         $lastName       = $this->faker->lastName();
         $firstName      = $this->faker->firstName();
 
         return [
-            'personal_number'   => $personalNumber,
             'last_name'         => $lastName,
             'first_name'        => $firstName,
             'email'             => Str::lower($lastName) . '.' . Str::lower($firstName) . '@' . $this->faker->unique()->domainName(),

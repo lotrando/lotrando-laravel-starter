@@ -158,7 +158,7 @@ return [
         'add_description'   => 'Pole název přílohy',
         'personal_number'   => 'Osobní číslo',
         'password'          => 'Heslo',
-        'email'             => 'Pole emailová adresa',
+        'email'             => 'Emailová adresa',
         'rooms'             => 'Pole místnosti',
         'date_start'        => 'Od',
         'date_end'          => 'Do',

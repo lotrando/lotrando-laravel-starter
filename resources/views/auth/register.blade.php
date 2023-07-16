@@ -2,27 +2,37 @@
 
 @section('app')
   <div class="container-tight container">
-    {{-- <div class="mb-4 text-center">
-      <a href="." class="navbar-brand navbar-brand-autodark"><img src="{{ asset('static/logo.svg') }}" height="36" alt=""></a>
-    </div> --}}
-    <h2 class="h2 mb-4 text-center">Create new account</h2>
+    <h2 class="h2 text-muted mb-4 text-center">{{ __('Sign up') }}</h2>
     <div class="card card-md shadow-sm">
+      <div class="card-stamp">
+        <div class="card-stamp-icon bg-primary text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12.5 21h-5.5a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2h10a2 2 0 0 1 1.74 1.012"></path>
+            <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+            <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+            <path d="M16 19h6"></path>
+            <path d="M19 16v6"></path>
+          </svg>
+        </div>
+      </div>
       <div class="card-body">
         <form action="register" method="post">
           @csrf
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label class="form-label">{{ __('Personal number') }}</label>
-            <input type="text" id="personal_number" name="personal_number" class="form-control @error('personal_number') is-invalid @enderror"
-              placeholder="{{ __('Personal number') }}" value="{{ old('personal_number') }}">
+            <input type="text" id="personal_number" name="personal_number" class="form-control @error('personal_number') is-invalid ? is-valid @enderror"
+              placeholder="{{ __('Number') }}" value="{{ old('personal_number') }}">
             @error('personal_number')
               <div class="invalid-feedback">{{ $errors->first('personal_number') }}</div>
             @enderror
-          </div>
+          </div> --}}
           <div class="row mb-3">
             <div class="col-6">
               <label class="form-label">{{ __('Last name') }}</label>
               <input type="text" id="last_name" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
-                placeholder="{{ __('Enter last name') }}" value="{{ old('last_name') }}">
+                placeholder="{{ __('Last name') }}" value="{{ old('last_name') }}">
               @error('last_name')
                 <div class="invalid-feedback">{{ $errors->first('last_name') }}</div>
               @enderror
@@ -30,7 +40,7 @@
             <div class="col-6">
               <label class="form-label">{{ __('First name') }}</label>
               <input type="text" id="first_name" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
-                placeholder="{{ __('Enter first name') }}" value="{{ old('first_name') }}">
+                placeholder="{{ __('First name') }}" value="{{ old('first_name') }}">
               @error('first_name')
                 <div class="invalid-feedback">{{ $errors->first('first_name') }}</div>
               @enderror
@@ -38,8 +48,8 @@
           </div>
           <div class="mb-2">
             <label class="form-label">{{ __('Email address') }}</label>
-            <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror"
-              placeholder="{{ __('Enter email address') }}" value="{{ old('email') }}">
+            <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Email address') }}"
+              value="{{ old('email') }}">
             @error('email')
               <div class="invalid-feedback">{{ $errors->first('email') }}</div>
             @enderror
@@ -62,14 +72,15 @@
           </div>
           <div class="mb-2">
             <label class="form-check">
-              <input class="form-check-input" id="terms" type="checkbox" onClick="check_agree(this.form)" />
+              <input class="form-check-input" id="terms" name="terms" type="checkbox" onClick="check_agree(this.form)" value="1"
+                @if (old('terms') == '1') checked @endif>
               <span class="form-check-label">{{ __('Agree the') }} <a href="" data-bs-toggle="modal"
                   data-bs-target="#modal-terms">{{ __('terms and policy') }}</a>.
               </span>
             </label>
           </div>
           <div class="form-footer">
-            <button type="submit" id="submitButton" class="btn btn-primary w-100" disabled>{{ __('Sign up') }}</button>
+            <button type="submit" id="submitButton" class="btn btn-primary w-100" @if (old('terms') != '1') disabled @endif>{{ __('Sign up') }}</button>
           </div>
         </form>
       </div>

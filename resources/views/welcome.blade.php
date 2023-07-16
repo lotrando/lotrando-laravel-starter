@@ -6,6 +6,11 @@
       <!-- Page body -->
       <div class="page-body">
         <div class="container-xl d-flex flex-column justify-content-center">
+          @if (session('status'))
+            <div class="alert alert-success shadow-sm" role="alert">
+              <div class="text-muted">{{ session('status') }}</div>
+            </div>
+          @endif
           <div class="empty">
             <div class="empty-img"><img src="{{ asset('static/illustrations/undraw_printing_invoices_5r4r.svg') }}" height="128" alt="">
             </div>

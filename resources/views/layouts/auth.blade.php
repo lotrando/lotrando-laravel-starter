@@ -15,8 +15,7 @@
 
     :root {
       --tblr-font-sans-serif: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-      --tblr-body-font-size: 0.95rem;
-      --tblr-body-font-weight: 400;
+      --tblr-body-font-size: 0.92rem;
     }
 
     body {
@@ -28,14 +27,13 @@
 <body class="d-flex flex-column">
   <div class="sticky-top">
     @include('layouts.partials.header')
-    @auth()
-      @include('layouts.partials.navbar')
-    @endauth
+    @include('layouts.partials.navbar')
     <div class="page page-center">
       @yield('app')
     </div>
   </div>
   @yield('modals')
+  @include('layouts.partials.logout')
 
   <script src="{{ asset('js/jquery.min.js') }}"></script>
   <script src="{{ asset('js/tabler.min.js') }}"></script>
