@@ -11,12 +11,10 @@
   <link rel="stylesheet" href="{{ asset('css/demo.min.css') }}" rel="stylesheet" />
   <title>Auth</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    @import url('https://rsms.me/inter/inter.css');
 
     :root {
-      --tblr-font-sans-serif: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-      --tblr-body-font-size: 0.95rem;
-      --tblr-body-font-weight: 400;
+      --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
     }
 
     body {
@@ -25,17 +23,13 @@
   </style>
 </head>
 
-<body class="d-flex flex-column">
-  <div class="sticky-top">
+<body>
+  <div class="page">
     @include('layouts.partials.header')
-    @auth()
-      @include('layouts.partials.navbar')
-    @endauth
-    <div class="page page-center">
-      @yield('app')
-    </div>
+    @include('layouts.partials.navbar')
+    @yield('app')
+    @yield('modals')
   </div>
-  @yield('modals')
 
   <script src="{{ asset('js/jquery.min.js') }}"></script>
   <script src="{{ asset('js/tabler.min.js') }}"></script>
