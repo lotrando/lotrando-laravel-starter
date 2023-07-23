@@ -27,7 +27,8 @@
           @csrf
           <div class="mb-3">
             <label class="form-label">{{ __('Email address') }}</label>
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter your registration email">
+            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+              placeholder="{{ __('Enter your registration email') }}">
             @error('email')
               <div class="invalid-feedback">{{ $errors->first('email') }}</div>
             @enderror
@@ -41,13 +42,13 @@
                 <path d="M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
                 <path d="M3 7l9 6l9 -6" />
               </svg>
-              {{ __('Send me new password') }}
+              {{ __('Send me a link to change my password') }}
             </button>
           </div>
         </form>
       </div>
       <div class="text-muted mb-3 text-center">
-        Forget it, <a href="{{ route('login') }}">send me back</a> to the sign in screen.
+        {{ __('Forget it,') }} <a href="{{ route('login') }}">{{ __('back') }}</a> {{ __('to the sign in screen.') }}
       </div>
     </div>
   </div>

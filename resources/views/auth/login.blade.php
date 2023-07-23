@@ -2,7 +2,7 @@
 
 @section('app')
   <div class="container-tight container">
-    <h2 class="h2 text-muted mb-4 text-center">{{ __('Sign in') }}</h2>
+    <h2 class="h2 text-muted mb-4 text-center">{{ __('Login') }}</h2>
     @if (session('status'))
       <div class="alert alert-success" role="alert">
         <div class="text-muted">{{ session('status') }}</div>
@@ -48,7 +48,7 @@
             </label>
             <div class="mb-3">
               <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}"
-                placeholder="Your password">
+                placeholder="{{ __('Your password') }}">
               @error('password')
                 <div class="invalid-feedback">{{ $errors->first('password') }}</div>
               @enderror
@@ -61,13 +61,13 @@
             </label>
           </div>
           <div class="form-footer">
-            <button type="submit" id="submitButton" class="btn btn-primary w-100">{{ __('Sign in') }}</button>
+            <button type="submit" id="submitButton" class="btn btn-primary w-100">{{ __('Login') }}</button>
           </div>
         </form>
       </div>
     </div>
     <div class="text-muted mt-3 text-center">
-      {{ __('Don\'t have account yet?') }} <a href="{{ route('register') }}" tabindex="-1">{{ __('Sign up') }}</a>
+      {{ __('Don\'t have account yet?') }} <a href="{{ route('register') }}" tabindex="-1">{{ __('Register') }}</a>
     </div>
   </div>
 @endsection

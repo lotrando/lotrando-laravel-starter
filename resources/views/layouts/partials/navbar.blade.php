@@ -34,23 +34,26 @@
                 </svg>
               </span>
               <span class="nav-link-title">
-                Dropdown
+                {{ __('Dropdown') }}
               </span>
             </a>
             <div class="dropdown-menu">
               <div class="dropdown-menu-columns">
                 <div class="dropdown-menu-column">
                   <a class="dropdown-item" href="#">
-                    Dropdown 1 - Link
+                    {{ __('Link') }}
                   </a>
                   <div class="dropend">
                     <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                       role="button" aria-expanded="false">
-                      Dropdown 2
+                      {{ __('Dropdown') }}
                     </a>
                     <div class="dropdown-menu">
                       <a href="#" class="dropdown-item">
-                        Dropdown 2 - Link
+                        {{ __('Link') }}
+                      </a>
+                      <a href="#" class="dropdown-item">
+                        {{ __('Link') }}
                       </a>
                     </div>
                   </div>

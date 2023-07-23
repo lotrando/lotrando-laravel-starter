@@ -149,7 +149,7 @@
                       <path d="M16 19h6"></path>
                       <path d="M19 16v6"></path>
                     </svg>
-                    {{ __('Sign up') }}
+                    {{ __('Register') }}
                   </a>
                   <a class="btn btn-primary" href="{{ route('login') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock-open" width="24" height="24" viewBox="0 0 24 24"
@@ -159,7 +159,7 @@
                       <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
                       <path d="M8 11v-5a4 4 0 0 1 8 0"></path>
                     </svg>
-                    {{ __('Sign in') }}
+                    {{ __('Login') }}
                   </a>
                 </div>
               </div>

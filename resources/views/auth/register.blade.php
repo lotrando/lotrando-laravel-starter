@@ -2,7 +2,7 @@
 
 @section('app')
   <div class="container-tight container">
-    <h2 class="h2 text-muted mb-4 text-center">{{ __('Sign up') }}</h2>
+    <h2 class="h2 text-muted mb-4 text-center">{{ __('Register') }}</h2>
     <div class="card card-md shadow-sm">
       <div class="card-stamp">
         <div class="card-stamp-icon bg-primary text-white">
@@ -48,8 +48,8 @@
           </div>
           <div class="mb-2">
             <label class="form-label">{{ __('Email address') }}</label>
-            <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Email address') }}"
-              value="{{ old('email') }}">
+            <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror"
+              placeholder="{{ __('Your job email') }}" value="{{ old('email') }}">
             @error('email')
               <div class="invalid-feedback">{{ $errors->first('email') }}</div>
             @enderror
@@ -57,7 +57,7 @@
           <div class="mb-2">
             <label class="form-label">{{ __('Password') }}</label>
             <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}"
-              placeholder="Your password">
+              placeholder="{{ __('Your password') }}">
             @error('password')
               <div class="invalid-feedback">{{ $errors->first('password') }}</div>
             @enderror
@@ -66,7 +66,7 @@
             <label class="form-label">{{ __('Password Confirmation') }}</label>
             <div class="input-group input-group-flat">
               <input type="password" id="password_confirmation" name="password_confirmation"
-                class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="Password confirmation"
+                class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="{{ __('Password confirmation') }}"
                 value="{{ old('password_confirmation') }}">
             </div>
           </div>
@@ -80,20 +80,21 @@
             </label>
           </div>
           <div class="form-footer">
-            <button type="submit" id="submitButton" class="btn btn-primary w-100" @if (old('terms') != '1') disabled @endif>{{ __('Sign up') }}</button>
+            <button type="submit" id="submitButton" class="btn btn-primary w-100"
+              @if (old('terms') != '1') disabled @endif>{{ __('Register') }}</button>
           </div>
         </form>
       </div>
     </div>
     <div class="text-muted mt-3 text-center">
-      {{ __('Already have account?') }} <a href="{{ route('login') }}" tabindex="-1">{{ __('Sign in') }}</a>
+      {{ __('Already have account?') }} <a href="{{ route('login') }}" tabindex="-1">{{ __('Login') }}</a>
     </div>
   </div>
 @endsection
 
 @section('modals')
   <div class="modal modal-blur fade" id="modal-terms" data-bs-backdrop="static" data-bs-keyboard="false"role="dialog" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">{{ __('Handling of personal data') }}</h5>
