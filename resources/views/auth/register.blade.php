@@ -92,20 +92,19 @@
 @endsection
 
 @section('modals')
-  <div class="modal modal-blur fade" id="modal-terms" role="dialog" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+  <div class="modal modal-blur fade" id="modal-terms" data-bs-backdrop="static" data-bs-keyboard="false"role="dialog" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">{{ __('Nakládání s osobními údaji') }}</h5>
+          <h5 class="modal-title">{{ __('Handling of personal data') }}</h5>
           <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <p class="text-justify">
-            Takovými osobními údaji jsou zejména údaje, které uvedete ve vyplněném registračním formuláři, nebo které společnosti sdělíte
-            mailem, po telefonu nebo mobilu či jiného obdobného zařízení.
+            {{ __('Such personal data are, in particular data that you enter in the completed registration form, or that you communicate to the company by e-mail, by telephone or mobile phone or other similar device.') }}
           </p>
           <p class="text-justify">
-            Jedná se především o jméno, příjmení, e-mail nebo telefonní číslo.
+            {{ __('This is primarily a first name, last name, e-mail or phone number.') }}
           </p>
           </p>
         </div>

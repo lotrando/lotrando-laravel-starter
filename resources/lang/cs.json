@@ -147,5 +147,10 @@
     "Content": "Text oznámení",
     "Title": "Titulek oznámení",
     "Close all": "Skrýt vše",
-    "Collapse all": "Zobrazit vše"
+    "Collapse all": "Zobrazit vše",
+    "Enable dark mode": "Zapnout temný vzhled",
+    "Enable light mode": "Zapnout světlý vzhled",
+    "Handling of personal data": "Nakládání s osobními údaji",
+    "Such personal data are, in particular data that you enter in the completed registration form, or that you communicate to the company by e-mail, by telephone or mobile phone or other similar device.": "Takovými osobními údaji jsou zejména údaje, které uvedete ve vyplněném registračním formuláři, nebo které společnosti sdělíte mailem, po telefonu nebo mobilu či jiného obdobného zařízení.",
+    "This is primarily a first name, last name, e-mail or phone number.": "Jedná se především o jméno, příjmení, e-mail nebo telefonní číslo."
 }
