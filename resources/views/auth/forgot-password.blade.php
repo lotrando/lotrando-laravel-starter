@@ -48,7 +48,7 @@
         </form>
       </div>
       <div class="text-muted mb-3 text-center">
-        {{ __('Forget it,') }} <a href="{{ route('login') }}">{{ __('back') }}</a> {{ __('to the sign in screen.') }}
+        <a href="{{ route('login') }}">{{ __('Back') }}</a> {{ __('to the sign in screen.') }}
       </div>
     </div>
   </div>

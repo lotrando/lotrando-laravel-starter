@@ -160,6 +160,8 @@
     "Such personal data are, in particular data that you enter in the completed registration form, or that you communicate to the company by e-mail, by telephone or mobile phone or other similar device.": "Takovými osobními údaji jsou zejména údaje, které uvedete ve vyplněném registračním formuláři, nebo které společnosti sdělíte mailem, po telefonu nebo mobilu či jiného obdobného zařízení.",
     "This is primarily a first name, last name, e-mail or phone number.": "Jedná se především o jméno, příjmení, e-mail nebo telefonní číslo.",
     "Forget it,": "Zapomeňte na to,",
-    "back": "zpět",
-    "to the sign in screen.": "na přihlašovací obrazovku."
+    "Back": "Zpět",
+    "to the sign in screen.": "na přihlašovací obrazovku.",
+    "We are sorry but the page you are looking for was not found": "Je nám líto, ale stránka, kterou hledáte, nebyla nalezena",
+    "We are sorry but our server encountered an internal error": "Je nám líto, ale na našem serveru došlo k interní chybě"
 }
